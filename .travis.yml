@@ -7,9 +7,11 @@ services:
 
 script:
     - docker build -t eyecare/acs-engine -f Dockerfile .
+    - docker tag eyecare/acs-engine eyecare/acs-engine:$(date +%m%d%y)
 
 after_success:
     - if [ "$TRAVIS_BRANCH" == "master" ]; then
         docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
         docker push eyecare/acs-engine;
+        docker push eyecare/acs-engine:$(date +%m%d%y);
       fi
