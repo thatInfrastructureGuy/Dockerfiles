@@ -3,6 +3,8 @@
 Minimal acs-engine build from source using minideb image.
 
 
+NOTE : This build runs daily off Azure/ACS-Engine repo.
+
 ### Examples
 
       docker run eyecare/acs-engine version
