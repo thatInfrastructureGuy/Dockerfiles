@@ -1,0 +1,15 @@
+sudo: required
+
+language: generic
+
+services:
+    - docker
+
+script:
+    - docker build -t eyecare/acs-engine -f Dockerfile .
+
+after_success:
+    - if [ "$TRAVIS_BRANCH" == "master" ]; then
+        docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+        docker push eyecare/acs-engine;
+      fi
