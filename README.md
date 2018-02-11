@@ -1,19 +1,20 @@
-NOTE : This build runs daily off Azure/ACS-Engine repo (master) 
+# Docker Image for ACS-Engine
+
+Nightly builts for acs-engine.
 
 Source code: https://github.com/eyecareprime/acs-engine-docker
 
-# Why ?
+## Why ?
 
-acs-engine repo is continuously updated with major Microsoft Azure integrations done everyday. The current stable binary is not built off master branch, hence it does not support all the features which are introduced in canary.
-We needed canary features, hence started this automated build.
+[ACS-Engine repo](https://github.com/Azure/acs-engine) is continuously updated with major Microsoft Azure integrations done everyday. Master branch is updated with canary releases. However, it can take a long time until they are released with the official stable binaries. This image aims to provide nightly builds for acs-engine built off master branch.
 
-# Features
-* Builds daily off master branch. Feel free to copy dockerfile and change the branch.
+## Features
+* Builds daily off master branch. 
 * Builds acs-engine from source using minideb base image.
 * Final Base image built off SCRATCH image
 * Non-priviledged container 
 * user: scratchuser pass: scratchuser 
-* Final Image Size: ~ 32 MB
+* Compressed Image Size: ~ 9 MB
 
 
 #### Examples:
