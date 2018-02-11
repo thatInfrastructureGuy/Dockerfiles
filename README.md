@@ -10,10 +10,10 @@ Source code: https://github.com/eyecareprime/acs-engine-docker
 
 ## Features
 * Builds daily off master branch. 
-* Builds acs-engine from source using minideb base image.
-* Final Base image built off SCRATCH image
-* Non-priviledged container 
-* user: scratchuser pass: scratchuser 
+* Builds from source 
+* Base Image : scratch 
+* Build Image: bitnami/minideb:stretch
+* Non-priviledged user 
 * Compressed Image Size: ~ 9 MB
 
 
