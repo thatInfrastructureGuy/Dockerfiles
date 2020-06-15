@@ -31,8 +31,6 @@ alias oConnect="ssh -q -f -N -p 22222 -D 18888 -o 'UserKnownHostsFile=/dev/null'
 
 Configure your browser to route traffic through `127.0.0.1:18888`. 
 
-There are plenty of guides on internet on how to do that for firefox/chrome. 
-
 [Check this reference guide](https://linuxize.com/post/how-to-setup-ssh-socks-tunnel-for-private-browsing/#configuring-your-browser-to-use-proxy)
 
 
