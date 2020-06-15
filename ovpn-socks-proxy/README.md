@@ -1,14 +1,14 @@
 # OpenVPN Socks Proxy
 
 
-### Prerequisites
+#### Prerequisites
 
 ```
-# Create OVPN directory
+# Create ovpn directory
 export OVPN_DIR=${HOME}/.ovpn
 mkdir ${OVPN_DIR} 
 
-# Copy your config file to the directory as config.ovpn
+# Copy your config
 cp <yourfile>.ovpn ${OVPN_DIR}/client.ovpn
 
 # Create credentials files
