@@ -4,16 +4,18 @@
 ### Prerequisites
 
 ```
+# Create OVPN directory
 export OVPN_DIR=${HOME}/.ovpn
 mkdir ${OVPN_DIR} 
 
-# Copy your config file to the directory
-cp client.ovpn ${OVPN_DIR}/client.ovpn
+# Copy your config file to the directory as config.ovpn
+cp <yourfile>.ovpn ${OVPN_DIR}/client.ovpn
 
 
 # Automate registering credentials for openvpn
 echo "auth-user-pass /app/credentials" >> ${OVPN_DIR}/client.ovpn
 
+# Create credentials files
 cat > ${OVPN_DIR}/credentials
 <your-username>
 <your-password>
@@ -33,8 +35,23 @@ Configure your browser to route traffic through `127.0.0.1:18888`.
 
 [Check this reference guide](https://linuxize.com/post/how-to-setup-ssh-socks-tunnel-for-private-browsing/#configuring-your-browser-to-use-proxy)
 
+#### Run the server
 
-#### Configure your SSH Session
+```
+# Start server
+oServer
+
+# Wait for 10 seconds. Check the logs for `Initialization Sequence Completed`
+docker logs oServer
+
+# Connect to server
+oConnect
+```
+
+Your browser should now route traffic through the docker container.
+
+
+#### SSH via proxy
 
 ```
 ssh -J localhost:22222 -i <priv_key> -p <port> <user>@<destination-host-ip>
