@@ -1,8 +1,7 @@
 #!/bin/ash
 
-echo "${USERNAME}" > pass.txt
-echo "${PASSWORD}" >> pass.txt
+# SSH Server
+dropbear -p 22 -B
 
-dropbear -p ${SSH_PORT} -B
-
+# VPN Server
 openvpn ${CLIENT_CONFIG}
