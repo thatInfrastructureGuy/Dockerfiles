@@ -4,4 +4,4 @@
 dropbear -p 22 -B
 
 # VPN Server
-openvpn ${CLIENT_CONFIG}
+openvpn --config /app/client.ovpn --auth-user-pass /app/credentials
