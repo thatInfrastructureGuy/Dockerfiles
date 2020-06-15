@@ -11,10 +11,6 @@ mkdir ${OVPN_DIR}
 # Copy your config file to the directory as config.ovpn
 cp <yourfile>.ovpn ${OVPN_DIR}/client.ovpn
 
-
-# Automate registering credentials for openvpn
-echo "auth-user-pass /app/credentials" >> ${OVPN_DIR}/client.ovpn
-
 # Create credentials files
 cat > ${OVPN_DIR}/credentials
 <your-username>
