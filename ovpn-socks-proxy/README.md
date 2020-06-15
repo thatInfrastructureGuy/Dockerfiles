@@ -23,8 +23,7 @@ cat > ${OVPN_DIR}/credentials
 
 ```
 export OVPN_DIR=${HOME}/.ovpn
-alias oServer='docker run -d --rm --name=oServer --env-file=${OVPN_DIR}/credentials -p 22222:22 -p=18888:8080 --cap-add=NET_ADMIN --device /dev/net/tun -v ${OVPN_DIR}
-:/app thatinfrastructureguy/ovpn-socks-proxy:v0.0.1'
+alias oServer="docker run -d --rm --name=oServer --env-file=${OVPN_DIR}/credentials -p 22222:22 -p=18888:8080 --cap-add=NET_ADMIN --device /dev/net/tun -v ${OVPN_DIR}:/app thatinfrastructureguy/ovpn-socks-proxy:v0.0.1"
 alias oConnect="ssh -q -f -N -p 22222 -D 18888 -o 'UserKnownHostsFile=/dev/null' -o 'StrictHostKeyChecking=no' root@127.0.0.1"
 ```
 
@@ -33,6 +32,7 @@ alias oConnect="ssh -q -f -N -p 22222 -D 18888 -o 'UserKnownHostsFile=/dev/null'
 Configure your browser to route traffic through `127.0.0.1:18888`. 
 
 There are plenty of guides on internet on how to do that for firefox/chrome. 
+
 [Check this reference guide](https://linuxize.com/post/how-to-setup-ssh-socks-tunnel-for-private-browsing/#configuring-your-browser-to-use-proxy)
 
 
