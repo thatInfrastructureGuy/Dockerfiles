@@ -52,7 +52,7 @@ Your browser should now route traffic through the docker container.
 #### SSH via proxy
 
 ```
-ssh -J localhost:22222 -i <priv_key> -p <port> <user>@<destination-host-ip>
+ssh -J root@localhost:22222 -i <priv_key> -p <port> <user>@<destination-host-ip>
 ```
 
 ##### Debugging
